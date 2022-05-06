@@ -38,7 +38,7 @@ variable "ecs_td_example_api" {
 ##############
 # Module
 ##############
-module "iam_role_ec2" {
+module "ecs_td_example_api" {
   source = "github.com/virsas/terraform_ecs_td"
   task   = var.ecs_td_example_api
   region = "eu-west-1"
