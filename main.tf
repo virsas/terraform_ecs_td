@@ -2,7 +2,7 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_ecs_task_definition" "service" {
+resource "aws_ecs_task_definition" "task" {
   family                = var.task.name
   container_definitions = <<-EOI
 [
@@ -26,8 +26,7 @@ resource "aws_ecs_task_definition" "service" {
         "logDriver": "awslogs",
         "options": {
             "awslogs-group": "/ecs/${var.task.name}",
-            "awslogs-region": "${var.region}",
-            "awslogs-stream-prefix": ""
+            "awslogs-region": "${var.region}"
           }
       }
   }
