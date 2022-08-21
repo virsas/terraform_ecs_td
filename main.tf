@@ -11,6 +11,9 @@ resource "aws_ecs_task_definition" "task" {
     "image": "${var.ecr}:latest",
     "cpu": ${var.task.cpu},
     "memory": ${var.task.memory},
+    "environment": [
+          ${var.variables}
+        ],
     "essential": true,
     "portMappings": [
       {

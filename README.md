@@ -36,11 +36,22 @@ variable "ecs_td_example_api" {
 }
 
 ##############
+# Locales
+##############
+locals {
+  ecs_td_example_api_variables = <<EOT
+    {"name": "FOO", "value": "BAR"},
+    {"name": "FOO2", "value": "BAR2"},
+  EOT
+}
+
+##############
 # Module
 ##############
 module "ecs_td_example_api" {
   source = "github.com/virsas/terraform_ecs_td"
   task   = var.ecs_td_example_api
+  variables = local.ecs_td_example_api_variables
   region = "eu-west-1"
   ecr    = module.ecr_example_api.url
 }
