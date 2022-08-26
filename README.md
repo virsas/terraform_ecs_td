@@ -49,7 +49,7 @@ locals {
 # Module
 ##############
 module "ecs_td_example_api" {
-  source = "github.com/virsas/terraform_ecs_td"
+  source = "git::https://github.com/virsas/terraform_ecs_td.git?ref=v1.0.0"
   task   = var.ecs_td_example_api
   variables = local.ecs_td_example_api_variables
   region = "eu-west-1"
