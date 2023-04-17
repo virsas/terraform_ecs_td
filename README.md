@@ -28,10 +28,6 @@ variable "ecs_td_example_api" {
     serviceContainerPort  = 3000
     # Host mapped port of the exposed container port
     serviceHostPort       = 3000
-    # In case you are using prometheus, this is the exposed prometheus port
-    metricsContainerPort  = 2000
-    # Mapped to the host
-    metricsHostPort       = 2000
   }
 }
 

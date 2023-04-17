@@ -19,10 +19,6 @@ resource "aws_ecs_task_definition" "task" {
       {
         "containerPort": ${var.task.serviceContainerPort},
         "hostPort": ${var.task.serviceHostPort}
-      },
-      {
-        "containerPort": ${var.task.metricsContainerPort},
-        "hostPort": ${var.task.metricsHostPort}
       }
     ],
     "logConfiguration": {
